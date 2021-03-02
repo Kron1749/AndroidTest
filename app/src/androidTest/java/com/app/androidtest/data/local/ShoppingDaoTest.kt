@@ -6,6 +6,8 @@ import androidx.test.core.app.ApplicationProvider
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.filters.SmallTest
 import com.app.androidtest.getOrAwaitValue
+import com.app.androidtest.launchFragmentInHiltContainer
+import com.app.androidtest.ui.ShoppingFragment
 import com.google.common.truth.Truth.assertThat
 import dagger.hilt.android.testing.HiltAndroidRule
 import dagger.hilt.android.testing.HiltAndroidTest
@@ -46,6 +48,14 @@ class ShoppingDaoTest {
     fun teardown(){
         database.close()
     }
+
+    @Test
+    fun testLaunchFragmentInHiltContainer(){
+        launchFragmentInHiltContainer<ShoppingFragment> {
+
+        }
+    }
+
 
     @Test
     fun insertShoppingItem() = runBlockingTest {
