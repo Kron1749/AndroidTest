@@ -49,12 +49,6 @@ class ShoppingDaoTest {
         database.close()
     }
 
-    @Test
-    fun testLaunchFragmentInHiltContainer(){
-        launchFragmentInHiltContainer<ShoppingFragment> {
-
-        }
-    }
 
 
     @Test
